@@ -1,26 +1,19 @@
+// src/app/(main)/components/Alert.js
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 export default function Alert({ message, type, onClose }) {
-    const [isVisible, setIsVisible] = useState(false);
-
     useEffect(() => {
-        setIsVisible(true);
+        if (!message) return;
+        const timer = setTimeout(() => {
+            onClose();
+        }, 3000); // Tutup setelah 3 detik
 
-        const timerOut = setTimeout(() => {
-            setIsVisible(false); 
-            const timerClose = setTimeout(() => {
-                onClose(); 
-            }, 200); 
-            return () => clearTimeout(timerClose);
-        }, 1000); 
+        return () => clearTimeout(timer);
+    }, [message, onClose]);
 
-        return () => {
-            clearTimeout(timerOut);
-            setIsVisible(false); 
-        };
-    }, [onClose]);
+    if (!message) return null; // Jangan render jika tidak ada pesan
 
     const bgColor = type === 'success' ? 'bg-green-500' : 'bg-red-500';
     const icon = type === 'success';
@@ -29,7 +22,7 @@ export default function Alert({ message, type, onClose }) {
         <div
             className={`fixed top-4 left-1/2 transform -translate-x-1/2 text-white px-4 py-3 rounded-lg shadow-lg ${bgColor} z-50
                  transition-all duration-500 ease-in-out
-                 ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}
+                 ${message ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}
         >
             <div className="flex items-center space-x-2">
                 <span>{icon}</span>

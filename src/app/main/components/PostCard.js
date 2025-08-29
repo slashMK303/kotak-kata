@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { doc, getDocs, collection, query, where } from "firebase/firestore";
-import { db, auth } from "../lib/firebase";
-import { updateReaction } from "../actions";
+import { db, auth } from "../../lib/firebase";
+import { updateReaction } from "../../actions";
 
 export default function PostCard({ post, showAlert }) {
     const reactionEmojis = ["❤️", "😂", "😢", "🔥", "👍"];
