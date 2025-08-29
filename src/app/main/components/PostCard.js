@@ -27,7 +27,15 @@ export default function PostCard({ post, showAlert }) {
     const formatDate = (timestamp) => {
         if (!timestamp) return "Baru saja";
         const date = new Date(timestamp.seconds * 1000);
-        return date.toLocaleString();
+        const formatter = new Intl.DateTimeFormat('id-ID', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            timeZone: 'Asia/Jakarta'
+        });
+        return `${formatter.format(date)} WIB`;
     };
 
     const handleReaction = async (emoji) => {
@@ -60,16 +68,16 @@ export default function PostCard({ post, showAlert }) {
 
     return (
         <div className="p-4 rounded-lg shadow-sm bg-gray-800">
-            <p className="text-gray-200">{post.text}</p>
-            <div className="mt-2 text-xs text-gray-400 flex justify-between items-center">
-                <span>{formatDate(post.createdAt)}</span>
+            <p className="text-gray-200 bg-[#101827] p-4 rounded-md">{post.text}</p>
+            <div className="mt-2 text-xs text-gray-400 flex flex-col justify-between items-end space-y-2">
+                <p className="self-start">{formatDate(post.createdAt)}</p>
                 <div className="flex space-x-2">
                     {reactionEmojis.map((emoji) => (
                         <button
                             key={emoji}
                             onClick={() => handleReaction(emoji)}
-                            className={`p-1 rounded-md transition-colors
-                ${userReactions.includes(emoji) ? 'bg-blue-500 text-white' : 'hover:bg-gray-200 dark:hover:bg-gray-700'} hover:cursor-pointer`}
+                            className={`p-1 px-2 rounded-md transition-colors bg-[#101827]
+                                ${userReactions.includes(emoji) ? 'bg-blue-500 text-white' : 'hover:bg-gray-200 dark:hover:bg-gray-700'} hover:cursor-pointer`}
                         >
                             {emoji}
                             <span className="ml-1 text-gray-700 dark:text-gray-300">

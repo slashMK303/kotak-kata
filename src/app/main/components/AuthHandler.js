@@ -1,4 +1,3 @@
-// src/app/(main)/components/AuthHandler.js
 "use client";
 
 import { useEffect } from "react";
@@ -11,15 +10,15 @@ export default function AuthHandler({ onAuthReady }) {
             if (!user) {
                 signInAnonymously(auth)
                     .then(() => {
-                        onAuthReady(true); // Panggil onAuthReady setelah berhasil login
+                        onAuthReady(true);
                         console.log("Signed in anonymously!");
                     })
                     .catch((error) => {
                         console.error("Error signing in anonymously:", error);
-                        onAuthReady(false); // Panggil onAuthReady jika gagal
+                        onAuthReady(false);
                     });
             } else {
-                onAuthReady(true); // Panggil onAuthReady jika user sudah ada
+                onAuthReady(true);
             }
         });
 

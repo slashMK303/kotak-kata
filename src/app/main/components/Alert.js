@@ -1,4 +1,3 @@
-// src/app/(main)/components/Alert.js
 "use client";
 
 import { useEffect } from 'react';
@@ -8,12 +7,12 @@ export default function Alert({ message, type, onClose }) {
         if (!message) return;
         const timer = setTimeout(() => {
             onClose();
-        }, 3000); // Tutup setelah 3 detik
+        }, 3000);
 
         return () => clearTimeout(timer);
     }, [message, onClose]);
 
-    if (!message) return null; // Jangan render jika tidak ada pesan
+    if (!message) return null;
 
     const bgColor = type === 'success' ? 'bg-green-500' : 'bg-red-500';
     const icon = type === 'success';

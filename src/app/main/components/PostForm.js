@@ -1,4 +1,3 @@
-// src/app/(main)/components/PostForm.js
 "use client";
 
 import { useState } from "react";
@@ -43,7 +42,7 @@ export default function PostForm({ showAlert, isAuthReady }) {
                 value={postText}
                 onChange={(e) => setPostText(e.target.value)}
                 placeholder="Tulis keluh kesah atau ceritamu di sini..."
-                className="w-full h-24 p-2 mb-2 border rounded-md bg-[#101827] text-[#f3f4f6] border-gray-800"
+                className="w-full h-24 p-2 mb-2 border rounded-md bg-[#101827] text-[#f3f4f6] border-gray-800 focus:outline focus:outline-blue-600"
             />
             <button
                 type="submit"
