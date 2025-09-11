@@ -23,8 +23,8 @@ export default function Footer() {
                     </svg>
                 </a>
             </div>
-            <p>&copy; {new Date().getFullYear()} Kotak Kata. Hak Cipta Dilindungi.</p>
-            <p className="mt-1">Dibuat dengan ❤️ oleh Nanang MK di Indonesia.</p>
+            <p>&copy; {new Date().getFullYear()} Kotak Cerita. Hak Cipta Dilindungi.</p>
+            <p className="mt-1">Dibuat dengan ❤️ oleh N.</p>
         </footer>
     );
 }

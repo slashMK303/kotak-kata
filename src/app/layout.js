@@ -5,8 +5,8 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const lora = Lora({ subsets: ['latin'], variable: '--font-lora' });
 
 export const metadata = {
-  title: "Kotak Kata - Bagikan Cerita Tanpa Nama",
-  description: "Kotak Kata adalah tempat aman untuk berbagi cerita, keluh kesah, dan pikiran Anda secara anonim. Temukan dukungan dan koneksi.",
+  title: "Kotak Cerita - Bagikan Cerita Tanpa Nama",
+  description: "Kotak Cerita adalah tempat aman untuk berbagi cerita, keluh kesah, dan pikiran Anda secara anonim.",
 };
 
 export default function RootLayout({ children }) {
