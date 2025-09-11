@@ -90,7 +90,7 @@ export default function LandingPage() {
                         <FeatureCard
                             icon="🔒"
                             title="Rahasia dan Aman"
-                            description="Kami menjaga privasi Anda."
+                            description="Privasi Anda terjamin dengan sistem anonim."
                         />
                     </div>
                 </section>
