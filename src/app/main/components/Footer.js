@@ -24,7 +24,7 @@ export default function Footer() {
                 </a>
             </div>
             <p>&copy; {new Date().getFullYear()} Kotak Cerita. Hak Cipta Dilindungi.</p>
-            <p className="mt-1">Dibuat dengan ❤️ oleh N.</p>
+            <p className="mt-1">Dibuat oleh N.</p>
         </footer>
     );
 }
